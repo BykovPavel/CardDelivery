@@ -13,13 +13,13 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class CardDeliveryTest {
     int days = 3;
-    NewDate DeliveryDate = new NewDate();
+    NewDate deliveryDate = new NewDate();
     @Test
     void shouldRegisterCard() {
         open("http://localhost:9999/");
         $("[data-test-id='city'] input").setValue("Москва");
         $("[data-test-id='date'] input").doubleClick().sendKeys(Keys.BACK_SPACE);
-        $("[data-test-id='date'] input").setValue(DeliveryDate.newDate(days));
+        $("[data-test-id='date'] input").setValue(deliveryDate.newDate(days));
         $("[data-test-id='name'] input").setValue("Сноу Джон");
         $("[data-test-id='phone'] input").setValue("+79991112233");
         $("[data-test-id='agreement']").click();
